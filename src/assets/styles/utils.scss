@@ -1,0 +1,180 @@
+// Paddings
+@include generatorWithStep(".p", "padding", 10, 5, "px");
+@include generatorWithStep(".pt", "padding-top", 10, 5, "px");
+@include generatorWithStep(".pb", "padding-bottom", 10, 5, "px");
+@include generatorWithStep(".pr", "padding-right", 10, 5, "px");
+@include generatorWithStep(".pl", "padding-left", 10, 5, "px");
+// Responsive Padding
+@include responsive() using ($breakpoint) {
+  @include generatorWithStep(".#{$breakpoint}\\:p", "padding", 10, 5, "px");
+  @include generatorWithStep(
+    ".#{$breakpoint}\\:pt",
+    "padding-top",
+    10,
+    5,
+    "px"
+  );
+  @include generatorWithStep(
+    ".#{$breakpoint}\\:pb",
+    "padding-bottom",
+    10,
+    5,
+    "px"
+  );
+  @include generatorWithStep(
+    ".#{$breakpoint}\\:pr",
+    "padding-right",
+    10,
+    5,
+    "px"
+  );
+  @include generatorWithStep(
+    ".#{$breakpoint}\\:pl",
+    "padding-left",
+    10,
+    5,
+    "px"
+  );
+}
+
+// Margins
+@include generatorWithStep(".m", "margin", 10, 5, "px");
+@include generatorWithStep(".mt", "margin-top", 10, 5, "px");
+@include generatorWithStep(".mb", "margin-bottom", 10, 5, "px");
+@include generatorWithStep(".mr", "margin-right", 10, 5, "px");
+@include generatorWithStep(".ml", "margin-left", 10, 5, "px");
+
+@for $i from 0 through 50 {
+  $i: $i * 5;
+  .mx-#{$i} {
+    margin-left: #{$i}px;
+    margin-right: #{$i}px;
+  }
+  .my-#{$i} {
+    margin-top: #{$i}px;
+    margin-bottom: #{$i}px;
+  }
+  .px-#{$i} {
+    padding-left: #{$i}px;
+    padding-right: #{$i}px;
+  }
+  .py-#{$i} {
+    padding-top: #{$i}px;
+    padding-bottom: #{$i}px;
+  }
+}
+
+// Responsive Margins
+@include responsive() using ($breakpoint) {
+  @include generatorWithStep(".#{$breakpoint}\\:m", "margin", 10, 5, "px");
+  @include generatorWithStep(".#{$breakpoint}\\:mt", "margin-top", 10, 5, "px");
+  @include generatorWithStep(
+    ".#{$breakpoint}\\:mb",
+    "margin-bottom",
+    10,
+    5,
+    "px"
+  );
+  @include generatorWithStep(
+    ".#{$breakpoint}\\:mr",
+    "margin-right",
+    10,
+    5,
+    "px"
+  );
+  @include generatorWithStep(
+    ".#{$breakpoint}\\:ml",
+    "margin-left",
+    10,
+    5,
+    "px"
+  );
+}
+
+// Font Size
+@include generator(".txt", "font-size", 50, "px");
+@include responsive() using ($breakpoint) {
+  @include generator(".#{$breakpoint}\\:txt", "font-size", 50, "px");
+}
+
+// Height & Width
+.w-auto {
+  width: auto;
+}
+.w-fc {
+  width: fit-content;
+}
+
+@include generatorWithStep(".w", "width", 20, 5, "%");
+@include generatorWithStep(".vw", "width", 20, 5, "vw");
+
+@include generatorWithStep(".h", "height", 20, 5, "%");
+@include generatorWithStep(".hp", "height", 100, 10, "px");
+@include generatorWithStep(".vh", "height", 20, 5, "vh");
+
+@include generatorWithStep(".max-width", "max-width", 20, 5, "%");
+@include generatorWithStep(".min-width", "min-width", 20, 5, "%");
+
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-inherit {
+  text-align: inherit;
+}
+
+.d-flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.d-block {
+  display: block;
+}
+.d-none {
+  display: none;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-stretch {
+  align-items: stretch;
+}
+
+.float-left {
+  float: left !important;
+}
+.float-right {
+  float: right !important;
+}
+.float-none {
+  float: none !important;
+}

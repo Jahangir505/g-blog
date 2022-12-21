@@ -1,0 +1,67 @@
+.site-error-area {
+  background-color: #f04144;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.site-error-area .error-box {
+  background-color: #fff;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  max-width: 50vw;
+
+  .error-info {
+    padding: 10px;
+    border-radius: 15px;
+    background: #f04144;
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 45px;
+
+    h1,
+    h6 {
+      color: #fff;
+      margin: 3px 0;
+    }
+  }
+
+  .error-text {
+    background-color: #f4f4fb;
+    border-radius: 15px;
+    padding: 1px 5px 10px 10px;
+    margin: 10px 0;
+
+    h3 {
+      margin: 10px 0;
+    }
+
+    dd {
+      margin-left: 10px;
+    }
+  }
+
+  .error-box {
+    h4 {
+      background-color: #4a8cee;
+      padding: inherit;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+}

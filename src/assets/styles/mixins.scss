@@ -1,0 +1,42 @@
+@mixin responsive($type: "max") {
+  @each $name, $size in $breakpoints {
+    @media (#{$type}-width: #{$size}px) {
+      @content ($name);
+      h1 {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+// @include responsive() using ($name) {
+//     @include generator(".#{$name}\\:p", "padding", 5, "px");
+// }
+
+@mixin responsiveMinMax($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+// @include responsiveMinMax(600px, 1200px) {
+//     .content { margin: 10px; }
+// }
+
+@mixin generator($prefix, $type, $range, $unit) {
+  @for $i from 0 through $range {
+    #{$prefix}-#{$i} {
+      #{$type}: #{$i}#{$unit};
+    }
+  }
+}
+// @include generator(".ml", "margin-left", 50, "px");
+
+@mixin generatorWithStep($prefix, $type, $length, $step, $unit) {
+  @for $i from 0 through $length {
+    $i: $i * $step;
+    #{$prefix}-#{$i} {
+      #{$type}: #{$i}#{$unit};
+    }
+  }
+}
+// @include generatorWithStep(".w", "width", 20, 5, "%");
+// will generate (20*5=100) 0 to 100 % of class
